@@ -4,7 +4,7 @@
   "description": "API para front FTP",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "test"
   },
   "author": "Savio Romero",
