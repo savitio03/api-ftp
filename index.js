@@ -1,3 +1,4 @@
+//ADD 
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
@@ -8,7 +9,7 @@ const app = express();
 app.use(cors());
 
 app.use(express.static('./public'));
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const storage = multer.diskStorage({
     filename: function (req, file, callback) {
@@ -25,6 +26,10 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
+app.get('/', function (req, res) {
+    res.send('Hello World!');
+});
 
 app.post('/upload', upload.single('file'), (req, res) => {
     console.log(req.body);
